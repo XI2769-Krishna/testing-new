@@ -51,8 +51,6 @@ jobs:
 
     - name: Create Matrix Data
       run: |
-        ls -la $TRACK_DIR
-        pwd
         # This function checks to see whether any of no-ci, skip-ci, or ci-skip exist.
         function skip_enabled() {
           if ! [[ -f "$1/track.yml" ]]; then
@@ -66,6 +64,7 @@ jobs:
         }
 
         cd $TRACK_DIR
+        pwd
         # Build a list of tracks to test. Does not include tracks that are tagged
         # with no-ci, skip-ci, or ci-skip or tracks in maintenance mode or dev tracks
         # that were accidentally commited to your git repo.
