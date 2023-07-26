@@ -91,10 +91,12 @@ jobs:
     - id: set-matrix
       run: |
         echo "matrix=${{ env.TRACKS }}" >> $GITHUB_OUTPUT
-
+        ls 
+        cat ${{ steps.set-matrix }}
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
-
+        
+      
   TestDevTracks:
     runs-on: ubuntu-latest
     # Ensures that you can't run this action on the main or master branch
