@@ -91,6 +91,8 @@ jobs:
     - id: set-matrix
       run: |
         echo "matrix=${{ env.TRACKS }}" >> $GITHUB_OUTPUT
+        ls 
+        cat ${{ steps.set-matrix }}
 
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
