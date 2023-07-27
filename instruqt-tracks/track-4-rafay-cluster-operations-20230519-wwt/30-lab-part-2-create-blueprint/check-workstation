@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -exo pipefail
+
+if [[ ! -f /tmp/project.txt ]]; then
+  echo "Rafay Project file not created. Safe to proceed with CI/CD run."
+  exit 0
+else
+  echo "Rafay Project file found. Proceeding with checks.."
+fi
+
+export PROJECT=$(cat /tmp/project.txt)
+NS=$(echo "$PROJECT" | sed 's/$/-ns/')
+
+# Check if namespace is created
+NAMESPACE_CREATED=$(rctl get namespaces --project $PROJECT -o json)
+if [[ $NAMESPACE_CREATED == "null" ]]; then
+ fail-message "You have not created any namespaces. Review the Create and Publish a Namespace section."
+fi
+
+NAMESPACE_CLUSTERS=$(rctl get namespaces --project $PROJECT -o json | jq --arg project "$PROJECT" -r '.[] | select(.metadata.name | contains($project)).status.assignedClusters | length')
+if [[ $NAMESPACE_CLUSTERS -ne 1 ]]; then
+ fail-message "The namespace $NS is not published on the cluster. Review the Create and Publish a Namespace section."
+fi
+
+# Check if addon Exists
+#
+ADD_ONS=$(rctl get addon --project $PROJECT -o json)
+if [[ $ADD_ONS != *"node-exporter-add-on"* ]]; then
+  fail-message "An addon called 'node-exporter-add-on' was not found. Review the Create an Add-On section."
+fi
+
+# Check: If blueprint exists
+#
+BLUEPRINT_STATUS=$(rctl get blueprints --project $PROJECT -o json | jq -c '.[] | select(.blueprintName == "node-exporter-bp").blueprintName' -r)
+if [[ "${BLUEPRINT_STATUS}" != "node-exporter-bp" ]]; then
+fail-message "A blueprint named 'node-exporter-bp' was not found. Review the Create a Custom Blueprint section."
+fi

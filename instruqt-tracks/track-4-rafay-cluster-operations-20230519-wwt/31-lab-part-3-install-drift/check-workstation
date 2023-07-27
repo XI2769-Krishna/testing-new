@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -exo pipefail
+
+if [[ ! -f /tmp/project.txt ]]; then
+  echo "Rafay Project file not created. Safe to proceed with CI/CD run."
+  exit 0
+else
+  echo "Rafay Project file found. Proceeding with checks.."
+fi
+
+export PROJECT=$(cat /tmp/project.txt)
+CLUSTER1=$(echo "$PROJECT" | sed 's/$/-cluster1/')
+
+# Check if the cluster has the right blueprint assigned
+#
+CLUSTER_BLUEPRINT=$(rctl get clusters --project $PROJECT $CLUSTER1 -o json | jq 'select(.cluster_blueprint | contains("node-exporter-bp")) | .cluster_blueprint')
+if [[ $CLUSTER_BLUEPRINT != *"node-exporter-bp"* ]]; then
+  fail-message "The 'node-exporter-bp' blueprint is not assigned to the $cluster1 cluster. Review Assign the Blueprint to the Cluster section."
+fi

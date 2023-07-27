@@ -1,0 +1,24 @@
+slug: track-4-kv1
+id: rlgt2dav9jex
+title: Track 4 - Rafay Cluster
+description: |-
+  This track will emphasize Rafay’s cluster operations with a detailed look at how Blueprints provide operational efficiencies, Provisioning, Projects, Cluster, and Nodes, and Workload Ops.
+
+  Rafay documentation is available at https://docs.rafay.co.
+
+  Email training@rafay.co for any questions on this training track.
+icon: ""
+tags:
+- no-ci
+- track4
+- prod
+owner: instruqt-support
+developers:
+- krishna@instruqt.com
+show_timer: true
+timelimit: 14400
+lab_config:
+  overlay: false
+  width: 25
+  position: right
+checksum: "5954382085127033505"
