@@ -1,8 +1,0 @@
-version: "3"
-virtualmachines:
-- name: workstation
-  image: instruqt/k3s-v1-25-0
-  shell: /bin/bash
-  machine_type: n1-standard-1
-secrets:
-- name: WWT_SECRET
