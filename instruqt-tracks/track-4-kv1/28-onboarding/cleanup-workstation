@@ -1,0 +1,46 @@
+#/bin/bash
+set -x
+
+cat <<EOF > /tmp/config.json
+{
+    "profile": "",
+    "api_key": "bec27c4b311ad9084e0894653fadc93f347a13fd",
+    "api_secret": "$WWT_SECRET",
+    "project_id": "mpl1qx2",
+    "rest_endpoint": "console.rafay.dev",
+    "ops_endpoint": "ops.rafay.dev"
+}
+EOF
+
+export FIRSTNAME=$(cat /tmp/firstname.txt)
+export LASTNAME=$(cat /tmp/lastname.txt)
+export EMAIL=$(cat /tmp/email.txt)
+export PROJECT=$(cat /tmp/project.txt)
+
+CLUSTER1=$(echo "$PROJECT" | sed 's/$/-cluster1/')
+echo $CLUSTER1 > /tmp/cluster1.txt
+
+CLUSTER2=$(echo "$PROJECT" | sed 's/$/-cluster2/')
+echo $CLUSTER2 > /tmp/cluster2.txt
+
+agent variable set PROJECT "$PROJECT"
+
+agent variable set CLUSTER1 "$CLUSTER1"
+
+agent variable set CLUSTER2 "$CLUSTER2"
+
+echo "Initializing Rafay CLI"
+rctl config init /tmp/config.json
+sleep 3
+
+echo "Creating User"
+rctl create user $EMAIL --console "$FIRSTNAME, $LASTNAME" --groups "Organization Admins"
+sleep 3
+
+echo "Creating Project"
+rctl create project $PROJECT
+sleep 3
+
+rm /tmp/config.json
+rm -rf .rafay
+rm onboarding.sh

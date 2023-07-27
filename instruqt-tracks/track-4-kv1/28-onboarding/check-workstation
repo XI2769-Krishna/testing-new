@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -exo pipefail
+
+if [[ ! -f /tmp/email.txt ]]; then
+  fail-message "Did you forget to run the onboarding script?"
+fi
+
+if ! grep "@" /tmp/email.txt; then
+    fail-message "Please make sure you enter a valid email address."
+fi
+
+if ! grep "\." /tmp/email.txt; then
+    fail-message "Please make sure you enter a valid email address."
+fi

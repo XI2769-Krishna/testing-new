@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -eo pipefail
+
+# Install the Rafay Kubeconfig so that the 
+# learner doesn't accidentially by-pass the
+# admission controller and delete "drift-protected"
+# resources.
+
+# Move this out of the way
+mv ~/.kube/config ~/.kube/config.orig
+
+# Download the Rafay config
+rctl kubeconfig download > ~/.kube/config
