@@ -20,9 +20,9 @@ tags:
 owner: instruqt-support
 developers:
 - krishna@instruqt.com
-timelimit: 2000
+timelimit: 200
 lab_config:
   overlay: false
   width: 33
   position: right
-checksum: "14643364077587772414"
+checksum: "16672587929948883305"
