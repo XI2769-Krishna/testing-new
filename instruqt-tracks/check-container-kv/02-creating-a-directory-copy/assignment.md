@@ -1,6 +1,6 @@
 ---
 slug: creating-a-directory-copy
-id: cutgatxwd6xy
+id: tnl4fjxdqmmn
 type: challenge
 title: Creating a directory copy
 teaser: Learn how to create directory
