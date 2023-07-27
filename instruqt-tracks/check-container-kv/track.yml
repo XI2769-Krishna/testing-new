@@ -1,21 +1,20 @@
-slug: check-container-kv-dev
-id: avacx1yafjui
-title: DEV - check-container-kv
+slug: check-container-kv
+id: pkqkggldrxla
+title: check-container-kv
 teaser: Get started quickly with a single container-based sandbox host
 description: Get started quickly with a container-based sandbox host. Choose a container
   when you need a fast, lightweight Linux system.
 icon: https://cdn.instruqt.com/assets/templates/ubuntu.png
 tags:
-- dev
+- prod
 - no-ci
 - skip-ci
 owner: instruqt-support
 developers:
 - krishna@instruqt.com
-maintenance: true
-timelimit: 3000
+timelimit: 300
 lab_config:
   overlay: false
   width: 33
   position: right
-checksum: "14665661280869128686"
+checksum: "12820221690716491203"
