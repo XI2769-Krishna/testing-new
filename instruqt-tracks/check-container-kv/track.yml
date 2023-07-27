@@ -6,9 +6,7 @@ description: Get started quickly with a container-based sandbox host. Choose a c
   when you need a fast, lightweight Linux system.
 icon: https://cdn.instruqt.com/assets/templates/ubuntu.png
 tags:
-- prod
-- no-ci
-- skip-ci
+- break
 owner: instruqt-support
 developers:
 - krishna@instruqt.com
