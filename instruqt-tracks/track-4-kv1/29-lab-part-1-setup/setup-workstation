@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -euxo pipefail
-
-mkdir -p /root/workspace
-touch ~/workspace/config.json
-touch ~/workspace/bootstrap-cluster-1.yaml
