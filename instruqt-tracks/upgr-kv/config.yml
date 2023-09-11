@@ -7,9 +7,10 @@ containers:
   - 80
   memory: 2048
 virtualmachines:
-- name: citrix
+- name: citrixx
   image: instruqt-citrix/adm-image-1
-  machine_type: n1-standard-2
+  shell: /bin/bash
+  machine_type: e2-highcpu-4
 aws_accounts:
 - name: aws-iam-track
   iam_policy: |-
