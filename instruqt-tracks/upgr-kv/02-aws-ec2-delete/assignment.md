@@ -1,6 +1,6 @@
 ---
 slug: aws-ec2-delete
-id: 8jodz7f29alx
+id: qktuo3orkrxf
 type: challenge
 title: AWS EC2 instance deletion
 teaser: Use AWS console to manage your EC2 virtual machine.

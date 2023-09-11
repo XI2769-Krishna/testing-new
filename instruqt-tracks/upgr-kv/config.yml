@@ -1,11 +1,15 @@
 version: "3"
 containers:
 - name: cloud-client
-  image: gcr.io/instruqt/cloud-client
+  image: gcr.io/instruqt/cloud-client:dev
   shell: /bin/bash
   ports:
   - 80
   memory: 2048
+virtualmachines:
+- name: citrix
+  image: instruqt-citrix/adm-image-1
+  machine_type: n1-standard-2
 aws_accounts:
 - name: aws-iam-track
   iam_policy: |-
