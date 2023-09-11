@@ -12,7 +12,10 @@ description: |-
 
   The default settings of this track only allow t2.nano sized ec2 instances. You should adjust the IAM policy to fit your own use case and application size.
 icon: https://cdn.instruqt.com/assets/templates/aws.png
-tags: []
+tags: 
+- aws
+- docker
+- kv
 owner: instruqt-support
 developers:
 - krishna@instruqt.com
