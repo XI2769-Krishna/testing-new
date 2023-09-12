@@ -14,6 +14,8 @@ description: |-
 icon: https://cdn.instruqt.com/assets/templates/aws.png
 tags:
 - dev
+- aws
+- docker
 owner: instruqt-support
 developers:
 - krishna@instruqt.com
