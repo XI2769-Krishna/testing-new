@@ -76,7 +76,9 @@ jobs:
           sed -i '0,/^slug/{s/-dev//}' track.yml
           sed -i '0,/^title/{s/DEV - //}' track.yml
           sed -i 's/^- dev/- prod/g' track.yml
-    
+          ## Add another echo statement to see the file after modification
+          echo "After sed commands:"
+          cat track.yml
           # Replace the track ID with the production track ID
           sed -i "s/^id: .*/id: ${{ env.TRACKID }}/g" track.yml
 
