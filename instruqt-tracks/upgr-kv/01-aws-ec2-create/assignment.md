@@ -1,6 +1,6 @@
 ---
 slug: aws-ec2-create
-id: o8byhbleq5vi
+id: skrhy4wbp2nj
 type: challenge
 title: Create an AWS EC2 instance
 teaser: Every cloud starts from VM
