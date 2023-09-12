@@ -16,6 +16,9 @@ tags:
 - aws
 - docker
 - kv
+- no-ci
+- ci-skip
+- skip-ci
 owner: instruqt-support
 developers:
 - krishna@instruqt.com
