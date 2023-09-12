@@ -56,13 +56,21 @@ jobs:
           path: ${{ env.TRACK_DIR }}/${{ inputs.slug }}
 
       - name: Update file permissions
-        run: sudo chmod -R a+rwx ${{ env.TRACK_DIR }}/${{ inputs.slug }}
+        run: |
+          sudo chmod -R a+rwx ${{ env.TRACK_DIR }}/${{ inputs.slug }}
+          cd ${{ env.TRACK_DIR }}/${{ inputs.slug }}
+          ## Add another echo statement to see the file after modification
+          echo "track"
+          cat track.yml
 
       # Updates track.yml with the production track ID, prepares for PR
       - name: Prepare dev track code for PR
         run: |
           # Change directory to the track directory
           cd ${{ env.TRACK_DIR }}/${{ inputs.slug }}
+          ## Add another echo statement to see the file after modification
+          echo "before sed commands:"
+          cat track.yml
 
           # If track is in maintenance mode, exit with an error
           if $(yq '.maintenance == true' track.yml); then
