@@ -1,4 +1,4 @@
 #!/bin/sh
 aws configure set region us-east-2 --profile default
 aws ec2 create-default-vpc || true
-mkdir terra
+mkdir terra2

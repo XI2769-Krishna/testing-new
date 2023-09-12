@@ -1,6 +1,6 @@
-slug: upgr-kv-dev
-id: wnval7kuyhbx
-title: DEV - upgr-kv
+slug: upgr-kv
+id: y0slds6saiky
+title: upgr-kv
 description: |-
   Learn how to use a sandboxed AWS account in your Instruqt track.
 
@@ -12,18 +12,14 @@ description: |-
 
   The default settings of this track only allow t2.nano sized ec2 instances. You should adjust the IAM policy to fit your own use case and application size.
 icon: https://cdn.instruqt.com/assets/templates/aws.png
-tags:
-- dev
-- no-ci
-- aws
+tags: []
 owner: instruqt-support
 developers:
 - krishna@instruqt.com
-maintenance: true
 idle_timeout: 300
 timelimit: 19800
 lab_config:
   overlay: false
   width: 33
   position: right
-checksum: "13870216293533375339"
+checksum: "10693136313642049712"
