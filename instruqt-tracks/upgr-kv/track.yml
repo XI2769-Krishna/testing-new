@@ -16,6 +16,7 @@ tags:
 - prod
 - docker
 - aws
+- no-ci
 owner: instruqt-support
 developers:
 - krishna@instruqt.com
