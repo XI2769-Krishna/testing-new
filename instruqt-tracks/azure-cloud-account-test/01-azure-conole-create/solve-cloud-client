@@ -1,0 +1,3 @@
+#!/bin/bash
+az group create --name myResourceGroup --location eastus
+az vm create --resource-group test --name example-host --image Debian 

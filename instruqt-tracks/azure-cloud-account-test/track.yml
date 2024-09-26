@@ -1,0 +1,21 @@
+slug: azure-cloud-account-test
+id: 1f05d2nax77y
+title: Azure-cloud-account-test
+teaser: Learn how to build tracks with an Azure account
+description: |-
+  Learn how to use a sandboxed Azure account in your Instruqt track.
+
+  **This track demonstrates how to:**
+    - Link an Azure cloud account to your sandbox
+    - How to use the cloud client Docker container
+    - Use the Azure  CLI and UI from our learn environment
+icon: https://upload.wikimedia.org/wikipedia/commons/c/cb/New-azure-logo-square.png
+tags:
+- Cloud Account
+- Docker
+owner: instruqt-demos
+developers:
+- santosh.nagargoje@xebia.com
+private: true
+published: true
+checksum: "5039039508587888014"
